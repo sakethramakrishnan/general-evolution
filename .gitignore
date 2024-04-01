@@ -382,4 +382,5 @@ data/datasets/fungi/
 data/datasets/fungi/test_fungi.fasta
 data/datasets/mdh/
 general_evolution/models/
+models/
 data/

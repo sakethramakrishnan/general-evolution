@@ -1,0 +1,38 @@
+# MDH E. coli sequence:
+genetic_seq: 'ATGAAAGTCGCAGTCCTCGGCGCTGCTGGCGGTATTGGCCAGGCGCTTGCACTACTGTTAAAAACCCAACTGCCTTCAGGTTCAGAACTCTCTCTGTATGATATCGCTCCAGTGACTCCCGGTGTGGCTGTCGATCTGAGCCATATCCCTACTGCTGTGAAAATCAAAGGTTTTTCTGGTGAAGATGCGACTCCGGCGCTGGAAGGCGCAGATGTCGTTCTTATCTCTGCAGGCGTAGCGCGTAAACCGGGTATGGATCGTTCCGACCTGTTTAACGTTAACGCCGGCATCGTGAAAAACCTGGTACAGCAAGTTGCGAAAACCTGCCCGAAAGCGTGCATTGGTATTATCACTAACCCGGTTAACACCACAGTTGCAATTGCTGCTGAAGTGCTGAAAAAAGCCGGTGTTTATGACAAAAACAAACTGTTCGGCGTTACCACGCTGGATATCATTCGTTCCAACACCTTTGTTGCGGAACTGAAAGGCAAACAGCCAGGCGAAGTTGAAGTGCCGGTTATTGGCGGTCACTCTGGTGTTACCATTCTGCCGCTGCTGTCACAGGTTCCTGGCGTTAGTTTTACCGAGCAGGAAGTGGCTGATCTGACCAAACGCATCCAGAACGCGGGTACTGAAGTGGTTGAAGCGAAGGCCGGTGGCGGGTCTGCAACCCTGTCTATGGGCCAGGCAGCTGCACGTTTTGGTCTGTCTCTGGTTCGTGCACTGCAGGGCGAACAAGGCGTTGTCGAATGTGCCTACGTTGAAGGCGACGGTCAGTACGCCCGTTTCTTCTCTCAACCGCTGCTGCTGGGTAAAAACGGCGTGGAAGAGCGTAAATCTATCGGTACCCTGAGCGCATTTGAACAGAACGCGCTGGAAGGTATGCTGGATACGCTGAAGAAAGATATCGCCCTGGGCGAAGAGTTCGTTAATAAGTAA'
+
+model_paths:
+  - /home/couchbucks/Documents/saketh/cpe-evolution/bin/models/baselines/codon_wordlevel/neox/neox_330m_codon_wordlevel/checkpoint-10500 # neox 330m codon wordlevel
+  - /home/couchbucks/Documents/saketh/cpe-evolution/bin/models/baselines/codon_wordlevel/neox/neox_33m_codon_wordlevel/checkpoint-18000 # neox 33m codon word level
+
+
+model_architectures:
+  - 'neox'
+  - 'neox'
+
+
+train_path: /home/couchbucks/Documents/saketh/cpe-evolution/data/datasets/mdh/training_refined_mdh.fasta
+validation_path: /home/couchbucks/Documents/saketh/cpe-evolution/data/datasets/mdh/valid_refined_mdh.fasta
+
+tokenizer_paths:
+  - '/home/couchbucks/Documents/saketh/cpe-evolution/bin/evolution/tokenizer_json_files/codon_wordlevel_71vocab.json'
+  - '/home/couchbucks/Documents/saketh/cpe-evolution/bin/evolution/tokenizer_json_files/codon_wordlevel_71vocab.json'
+
+
+tokenizer_types:
+  - 'codon_wordlevel'
+  - 'codon_wordlevel'
+
+vocab_sizes:
+  - 0
+  - 0
+
+
+convert_to_aa_list:
+  - False
+  - False
+
+
+num_char_per_token_list:
+  - 3
+  - 3

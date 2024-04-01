@@ -1,0 +1,172 @@
+# MDH E. coli sequence:
+genetic_seq: 'ATGAAAGTCGCAGTCCTCGGCGCTGCTGGCGGTATTGGCCAGGCGCTTGCACTACTGTTAAAAACCCAACTGCCTTCAGGTTCAGAACTCTCTCTGTATGATATCGCTCCAGTGACTCCCGGTGTGGCTGTCGATCTGAGCCATATCCCTACTGCTGTGAAAATCAAAGGTTTTTCTGGTGAAGATGCGACTCCGGCGCTGGAAGGCGCAGATGTCGTTCTTATCTCTGCAGGCGTAGCGCGTAAACCGGGTATGGATCGTTCCGACCTGTTTAACGTTAACGCCGGCATCGTGAAAAACCTGGTACAGCAAGTTGCGAAAACCTGCCCGAAAGCGTGCATTGGTATTATCACTAACCCGGTTAACACCACAGTTGCAATTGCTGCTGAAGTGCTGAAAAAAGCCGGTGTTTATGACAAAAACAAACTGTTCGGCGTTACCACGCTGGATATCATTCGTTCCAACACCTTTGTTGCGGAACTGAAAGGCAAACAGCCAGGCGAAGTTGAAGTGCCGGTTATTGGCGGTCACTCTGGTGTTACCATTCTGCCGCTGCTGTCACAGGTTCCTGGCGTTAGTTTTACCGAGCAGGAAGTGGCTGATCTGACCAAACGCATCCAGAACGCGGGTACTGAAGTGGTTGAAGCGAAGGCCGGTGGCGGGTCTGCAACCCTGTCTATGGGCCAGGCAGCTGCACGTTTTGGTCTGTCTCTGGTTCGTGCACTGCAGGGCGAACAAGGCGTTGTCGAATGTGCCTACGTTGAAGGCGACGGTCAGTACGCCCGTTTCTTCTCTCAACCGCTGCTGCTGGGTAAAAACGGCGTGGAAGAGCGTAAATCTATCGGTACCCTGAGCGCATTTGAACAGAACGCGCTGGAAGGTATGCTGGATACGCTGAAGAAAGATATCGCCCTGGGCGAAGAGTTCGTTAATAAGTAA'
+
+model_paths:
+  - ../models/bpe/cpe_tokenizer/neox/neox_330m_cpe_200/checkpoint-14000 # neox 330m cpe: 2
+  - ../models/bpe/cpe_tokenizer/neox/neox_330m_cpe_350/checkpoint-15000
+
+  - ../models/bpe/cpe_tokenizer/neox/neox_33m_cpe_200/checkpoint-12000 # neox 33m cpe: 5
+  - ../models/bpe/cpe_tokenizer/neox/neox_33m_cpe_250/checkpoint-18000
+  - ../models/bpe/cpe_tokenizer/neox/neox_33m_cpe_300/checkpoint-19000
+  - ../models/bpe/cpe_tokenizer/neox/neox_33m_cpe_350/checkpoint-19000
+  - ../models/bpe/cpe_tokenizer/neox/neox_33m_cpe_400/checkpoint-18000
+
+  - ../models/bpe/cpe_tokenizer/bert/bert_33m_cpe_250/checkpoint-13500 # bert 33m cpe: 8
+  - ../models/bpe/cpe_tokenizer/bert/bert_33m_cpe_300/checkpoint-13500
+  - ../models/bpe/cpe_tokenizer/bert/bert_33m_cpe_325/checkpoint-13500
+  - ../models/bpe/cpe_tokenizer/bert/bert_33m_cpe_350/checkpoint-13500
+  - ../models/bpe/cpe_tokenizer/bert/bert_33m_cpe_375/checkpoint-13500
+  - ../models/bpe/cpe_tokenizer/bert/bert_33m_cpe_400/checkpoint-13500   
+  - ../models/bpe/cpe_tokenizer/bert/bert_33m_cpe_425/checkpoint-13500
+  - ../models/bpe/cpe_tokenizer/bert/bert_33m_cpe_450/checkpoint-13500
+
+  - ../models/baselines/codon_wordlevel/neox/neox_330m_codon_wordlevel/checkpoint-10500 # neox 330m codon wordlevel
+  - ../models/baselines/codon_wordlevel/neox/neox_33m_codon_wordlevel/checkpoint-18000 # neox 33m codon word level
+
+  - ../models/baselines/codon_wordlevel/bert/bert_33m_codon_wordlevel/checkpoint-13500 # bert 33m codon word level
+
+model_architectures:
+  - 'neox'
+  - 'neox'
+
+  - 'neox'
+  - 'neox'
+  - 'neox'
+  - 'neox'
+  - 'neox'
+
+  - 'bert'
+  - 'bert'
+  - 'bert'
+  - 'bert'
+  - 'bert'
+  - 'bert'
+  - 'bert'
+  - 'bert'
+
+  - 'neox'
+  - 'neox'
+
+  - 'bert'
+
+train_path: /home/couchbucks/Documents/saketh/cpe-evolution/data/datasets/mdh/training_refined_mdh.fasta
+validation_path: /home/couchbucks/Documents/saketh/cpe-evolution/data/datasets/mdh/valid_refined_mdh.fasta
+
+tokenizer_paths:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+
+  - 'tokenizer_json_files/codon_wordlevel_71vocab.json'
+  - 'tokenizer_json_files/codon_wordlevel_71vocab.json'
+
+  - 'tokenizer_json_files/codon_wordlevel_71vocab.json'
+
+tokenizer_types:
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+  - 'cpe_tokenizer'
+
+  - 'codon_wordlevel'
+  - 'codon_wordlevel'
+
+  - 'codon_wordlevel'
+
+vocab_sizes:
+  - 200
+  - 350
+
+  - 200
+  - 250
+  - 300
+  - 350
+  - 400
+
+  - 250
+  - 300
+  - 325
+  - 350
+  - 375
+  - 400
+  - 425
+  - 450
+
+  - 0
+  - 0
+
+  - 0
+
+convert_to_aa_list:
+  - False
+  - False
+
+  - False
+  - False
+  - False
+  - False
+  - False
+
+  - False
+  - False
+  - False
+  - False
+  - False
+  - False
+  - False
+  - False
+
+  - False
+  - False
+
+  - False
+
+num_char_per_token_list:
+  - 3
+  - 3
+
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+
+  - 3
+  - 3
+
+  - 3
+
