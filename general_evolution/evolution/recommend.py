@@ -58,7 +58,10 @@ def parse_args():
         description='Recommend substitutions to a wildtype sequence'
     )
     
-    parser.add_argument("--config", type=str, default='/home/couchbucks/Documents/saketh/cpe-evolution/bin/evolution/yaml/test.yaml')
+    parser.add_argument("--config", type=str, required=True)
+    
+    parser.add_argument("--n_top_recommended_mutations", type=int, default=1,
+                        help = 'select the mutations that have been recommended by the n most models')
     
     parser.add_argument(
         '--cuda',
@@ -96,7 +99,7 @@ if __name__ == '__main__':
     
     mutations_list = [(mut, mutations_models[mut]) for mut in mutations_models]
     
-    
+    # NOTE: we only want to select the mutations that have been recommended by the n most models
     top_mutations = top_n_occurrences(mutations_list, n=1)
 
     # Print the top mutations
